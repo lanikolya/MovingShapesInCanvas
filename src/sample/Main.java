@@ -39,7 +39,7 @@ public class Main extends Application {
             @Override
             public void handle(KeyEvent event) {
                 //Add rectangle
-                if (event.getCode() == KeyCode.R) {
+                if (event.getCode() == KeyCode.DIGIT1) {
                     list.add(new Rectangle(gc));
                     list.get(list.size() - 1).clean();
                     for (int i = 0; i < list.size(); i++) {
@@ -48,7 +48,7 @@ public class Main extends Application {
                     circle++;
                 }
                 //Add triangle
-                if (event.getCode() == KeyCode.T) {
+                if (event.getCode() == KeyCode.DIGIT2) {
                     list.add(new Triangle(gc));
                     list.get(list.size() - 1).clean();
                     for (int i = 0; i < list.size(); i++) {
@@ -57,7 +57,7 @@ public class Main extends Application {
                     circle++;
                 }
                 //Add oval
-                if (event.getCode() == KeyCode.O) {
+                if (event.getCode() == KeyCode.DIGIT3) {
                     list.add(new Oval(gc));
                     list.get(list.size() - 1).clean();
                     for (int i = 0; i < list.size(); i++) {
@@ -66,7 +66,7 @@ public class Main extends Application {
                     circle++;
                 }
                 //Add rhombus
-                if (event.getCode() == KeyCode.R) {
+                if (event.getCode() == KeyCode.DIGIT4) {
                     list.add(new Rhombus(gc));
                     list.get(list.size() - 1).clean();
                     for (int i = 0; i < list.size(); i++) {
@@ -75,7 +75,7 @@ public class Main extends Application {
                     circle++;
                 }
                 //Add Star
-                if (event.getCode() == KeyCode.S) {
+                if (event.getCode() == KeyCode.DIGIT5) {
                     list.add(new Star(gc));
                     list.get(list.size() - 1).clean();
                     for (int i = 0; i < list.size(); i++) {
