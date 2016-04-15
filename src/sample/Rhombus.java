@@ -14,23 +14,35 @@ public class Rhombus extends Shape {
 
     @Override
     public void draw() {
-    gc.setStroke(Color.PURPLE);
-        gc.strokePolygon(new double[]{x,x+wide/2,x+wide,x+wide/2,},
-                new double[]{y+high/2,y,y+high/2,y+high},4);
+        if (x>=gc.getCanvas().getWidth()-wide){
+            x=gc.getCanvas().getWidth()-wide-5;
+        }
+        if (x<=0){
+            x=5;
+        }
+        if (y>=gc.getCanvas().getHeight()-high){
+            y=gc.getCanvas().getHeight()-high-5;
+        }
+        if (y<=0){
+            y=5;
+        }
+        gc.setStroke(Color.PURPLE);
+        gc.strokePolygon(new double[]{x, x + wide / 2, x + wide, x + wide / 2,},
+                new double[]{y + high / 2, y, y + high / 2, y + high}, 4);
     }
 
     @Override
     public void changeColor(Color color) {
-gc.setStroke(color);
-        gc.strokePolygon(new double[]{x,x+wide/2,x+wide,x+wide/2,},
-                new double[]{y+high/2,y,y+high/2,y+high},4);
+        gc.setStroke(color);
+        gc.strokePolygon(new double[]{x, x + wide / 2, x + wide, x + wide / 2,},
+                new double[]{y + high / 2, y, y + high / 2, y + high}, 4);
     }
 
-    public double getWide(){
+    public double getWide() {
         return wide;
     }
 
-    public double getHigh(){
+    public double getHigh() {
         return high;
     }
 }

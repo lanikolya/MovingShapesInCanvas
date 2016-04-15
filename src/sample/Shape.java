@@ -8,14 +8,14 @@ import java.util.Random;
 public abstract class Shape {
     Random random = new Random();
     protected GraphicsContext gc;
-    protected int x;
-    protected int y;
-    protected int step = 5;
+    protected double x;
+    protected double y;
+    protected double step = 5;
 
     public Shape(GraphicsContext gc) {
         this.gc = gc;
-        x = random.nextInt((int)gc.getCanvas().getWidth());
-        y = random.nextInt((int)gc.getCanvas().getHeight());
+        x = random.nextDouble()*gc.getCanvas().getWidth();
+        y = random.nextDouble()*gc.getCanvas().getHeight();
             }
 
     public GraphicsContext getGc() {

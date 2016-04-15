@@ -14,6 +14,18 @@ public class Star extends Shape {
 
     @Override
     public void draw() {
+        if (x>=gc.getCanvas().getWidth()-wide){
+            x=gc.getCanvas().getWidth()-wide-5;
+        }
+        if (x<=0){
+            x=5;
+        }
+        if (y>=gc.getCanvas().getHeight()-high){
+            y=gc.getCanvas().getHeight()-high-5;
+        }
+        if (y<=0){
+            y=5;
+        }
         gc.setStroke(Color.RED);
         gc.strokePolygon(new double[]{x, x + wide / 2, x + wide, x, x + wide},
                 new double[]{y + high, y, y + high, y + high / 3, y + high / 3}, 5);
