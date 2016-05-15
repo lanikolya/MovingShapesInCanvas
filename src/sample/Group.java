@@ -4,11 +4,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Group extends Shape {
-    List<Shape> listOfGroup = new ArrayList<Shape>();
+    private ArrayList<Shape> listOfGroup = new ArrayList<>();
     public Color colorForGroup;
 
 
@@ -17,21 +16,23 @@ public class Group extends Shape {
         colorForGroup = generateColorForGroup();
     }
 
+    /**
+     * Create method which check presence of selected object in "listOfGroup"
+     */
     public boolean isExist(Shape selected) {
-        if (listOfGroup.contains(selected)) {
-            return true;
-        }
-        return false;
+        return listOfGroup.contains(selected);
     }
 
+    /**
+     * Create method to generate random color
+     */
     public Color generateColorForGroup() {
         // Java 'Color' class takes 3 floats, from 0 to 1.
         Random rand = new Random();
         float r = rand.nextFloat();
         float g = rand.nextFloat();
         float b = rand.nextFloat();
-        Color randomColorForGroup = new Color(r, g, b, 1);
-        return randomColorForGroup;
+        return new Color(r, g, b, 1);
     }
 
     @Override
@@ -67,11 +68,7 @@ public class Group extends Shape {
                 k++;
             }
         }
-        if (k == listOfGroup.size()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(k == listOfGroup.size());
     }
 
     @Override
@@ -82,11 +79,7 @@ public class Group extends Shape {
                 k++;
             }
         }
-        if (k == listOfGroup.size()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(k == listOfGroup.size());
     }
 
     @Override
@@ -97,11 +90,7 @@ public class Group extends Shape {
                 k++;
             }
         }
-        if (k == listOfGroup.size()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(k == listOfGroup.size());
     }
 
     @Override
@@ -112,59 +101,63 @@ public class Group extends Shape {
                 k++;
             }
         }
-        if (k == listOfGroup.size()) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(k == listOfGroup.size());
     }
 
+    @Override
     public void moveUp() {
         for (Shape s : listOfGroup) {
             if (!crossUpFrontierOfCanvas()) {
                 s.moveUp();
-            } else return;
+            } else {
+                return;
+            }
         }
     }
 
+    @Override
     public void moveDown() {
         for (Shape s : listOfGroup) {
             if (!crossDownFrontierOfCanvas()) {
                 s.moveDown();
-            } else return;
+            } else {
+                return;
+            }
         }
     }
 
+    @Override
     public void moveRight() {
         for (Shape s : listOfGroup) {
             if (!crossRightFrontierOfCanvas()) {
                 s.moveRight();
-            } else return;
+            } else {
+                return;
+            }
         }
     }
 
+    @Override
     public void moveLeft() {
         for (Shape s : listOfGroup) {
             if (!crossLeftFrontierOfCanvas()) {
                 s.moveLeft();
-            } else return;
+            } else {
+                return;
+            }
         }
     }
 
-    public boolean isEmpty() {
-        if (listOfGroup.isEmpty()) {
-            return true;
-        }
-        return false;
-    }
-
-    public int size(){
-        return listOfGroup.size();
-    }
-
+    /**
+     * Create method to add shapes in "listOfGroup"
+     */
     public void addToGroup(Shape shape) {
         listOfGroup.add(shape);
         System.out.println("listOfGroup.size=" + "\t" + listOfGroup.size());
     }
 
+    @Override
+    public GraphicsContext getGc() {
+        return super.getGc();
+    }
 }
