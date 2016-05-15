@@ -31,7 +31,7 @@ public class HTMLTableHelp {
     }
 
     public static void main(String[] args) {
-        Runnable r = () -> new HTMLTableHelp();
+        Runnable r = HTMLTableHelp::new;
         SwingUtilities.invokeLater(r);
     }
 

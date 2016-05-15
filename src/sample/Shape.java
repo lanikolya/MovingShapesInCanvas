@@ -13,7 +13,6 @@ import java.util.Random;
  * Create conditions for displaying of figure on canvas
  */
 public abstract class Shape {
-    private Random random;
     protected GraphicsContext gc;
     protected double x;
     protected double y;
@@ -23,7 +22,7 @@ public abstract class Shape {
      */
     public Shape(GraphicsContext gc) {
         this.gc = gc;
-        random = new Random();
+        Random random = new Random();
         x = random.nextDouble() * gc.getCanvas().getWidth();
         y = random.nextDouble() * gc.getCanvas().getHeight();
     }
@@ -56,7 +55,7 @@ public abstract class Shape {
     /**
      * Next methods are original for each figure. Consequently, there we define their names only.
      * More detail description will be directly in classes of each figures.
-     *
+     * <p>
      * Method draw() drawing shape
      */
     public abstract void draw();

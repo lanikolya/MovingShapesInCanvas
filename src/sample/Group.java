@@ -10,7 +10,6 @@ public class Group extends Shape {
     private ArrayList<Shape> listOfGroup = new ArrayList<>();
     public Color colorForGroup;
 
-
     public Group(GraphicsContext gc) {
         super(gc);
         colorForGroup = generateColorForGroup();

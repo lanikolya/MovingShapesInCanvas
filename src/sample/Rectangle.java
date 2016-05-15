@@ -15,6 +15,7 @@ public class Rectangle extends Shape {
         gc.setStroke(Color.BLACK);
         gc.strokeRect(x, y, Const.WIDE, Const.HIGH);
     }
+
     @Override
     public void changeColor(Color color) {
         checkFrontiersOfCanvas();

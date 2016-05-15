@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class Main extends Application {
 
-    private final static double CANVAS_X = 1000;
-    private final static double CANVAS_Y = 600;
+
     private Scene scene;
     private GraphicsContext gc;
     //Create listShapes which will contained adds shapes
@@ -28,20 +27,17 @@ public class Main extends Application {
     //Create counter for access to concrete shape in listShapes
     private int counter = -1;
     private Group group;
-    private static final String PAGE_TITLE = "Geometric figures";
-    private static final int COLUMN_INDEX_FOR_GRID = 1;
-    private static final int ROW_INDEX_FOR_GRID = 1;
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         BorderPane group = new BorderPane();
-        primaryStage.setTitle(PAGE_TITLE);
-        Canvas canvas = new Canvas(CANVAS_X, CANVAS_Y);
+        primaryStage.setTitle(Const.PAGE_TITLE);
+        Canvas canvas = new Canvas(Const.CANVAS_X, Const.CANVAS_Y);
         GridPane grid = createGrid();
         addButtonClean(grid);
         addButtonHelp(grid);
-        grid.add(group, COLUMN_INDEX_FOR_GRID, ROW_INDEX_FOR_GRID);
+        grid.add(group, Const.COLUMN_INDEX, Const.ROW_INDEX_FOR_GRID);
         scene = new Scene(grid);
         gc = canvas.getGraphicsContext2D();
         primaryStage.setScene(scene);

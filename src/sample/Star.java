@@ -14,7 +14,7 @@ public class Star extends Shape {
         checkFrontiersOfCanvas();
         gc.setStroke(Color.RED);
         gc.strokePolygon(new double[]{x, x + Const.WIDE / 2, x + Const.WIDE, x, x + Const.WIDE},
-                new double[]{y + Const.HIGH, y, y + Const.HIGH, y + Const.HIGH / 3, y + Const.HIGH / 3}, 5);
+                new double[]{y + Const.HIGH, y, y + Const.HIGH, y + Const.HIGH / 3, y + Const.HIGH / 3}, Const.QUANTITY_POINTS_FOR_STAR);
     }
 
     @Override
@@ -22,6 +22,6 @@ public class Star extends Shape {
         checkFrontiersOfCanvas();
         gc.setStroke(color);
         gc.strokePolygon(new double[]{x, x + Const.WIDE / 2, x + Const.WIDE, x, x + Const.WIDE},
-                new double[]{y + Const.HIGH, y, y + Const.HIGH, y + Const.HIGH / 3, y + Const.HIGH / 3}, 5);
+                new double[]{y + Const.HIGH, y, y + Const.HIGH, y + Const.HIGH / 3, y + Const.HIGH / 3}, Const.QUANTITY_POINTS_FOR_STAR);
     }
 }

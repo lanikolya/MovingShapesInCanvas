@@ -14,7 +14,7 @@ public class Rhombus extends Shape {
         checkFrontiersOfCanvas();
         gc.setStroke(Color.PURPLE);
         gc.strokePolygon(new double[]{x, x + Const.WIDE / 2, x + Const.WIDE, x + Const.WIDE / 2,},
-                new double[]{y + Const.HIGH / 2, y, y + Const.HIGH / 2, y + Const.HIGH}, 4);
+                new double[]{y + Const.HIGH / 2, y, y + Const.HIGH / 2, y + Const.HIGH}, Const.QUANTITY_POINTS_FOR_RHOMBUS);
     }
 
     @Override
@@ -22,6 +22,6 @@ public class Rhombus extends Shape {
         checkFrontiersOfCanvas();
         gc.setStroke(color);
         gc.strokePolygon(new double[]{x, x + Const.WIDE / 2, x + Const.WIDE, x + Const.WIDE / 2,},
-                new double[]{y + Const.HIGH / 2, y, y + Const.HIGH / 2, y + Const.HIGH}, 4);
+                new double[]{y + Const.HIGH / 2, y, y + Const.HIGH / 2, y + Const.HIGH}, Const.QUANTITY_POINTS_FOR_RHOMBUS);
     }
 }

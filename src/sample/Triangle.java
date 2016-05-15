@@ -13,7 +13,7 @@ public class Triangle extends Shape {
         checkFrontiersOfCanvas();
         gc.setStroke(Color.ORANGE);
         gc.strokePolygon(new double[]{x, x + Const.WIDE, x + Const.WIDE / 2},
-                new double[]{y + Const.HIGH, y + Const.HIGH, y}, 3);
+                new double[]{y + Const.HIGH, y + Const.HIGH, y}, Const.QUANTITY_POINTS_FOR_TRIANGLE);
     }
 
     @Override
@@ -21,7 +21,7 @@ public class Triangle extends Shape {
         checkFrontiersOfCanvas();
         gc.setStroke(color);
         gc.strokePolygon(new double[]{x, x + Const.WIDE, x + Const.WIDE / 2},
-                new double[]{y + Const.HIGH, y + Const.HIGH, y}, 3);
+                new double[]{y + Const.HIGH, y + Const.HIGH, y}, Const.QUANTITY_POINTS_FOR_TRIANGLE);
     }
 }
 
